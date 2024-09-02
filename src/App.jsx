@@ -1,25 +1,28 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Gallery from './components/Gallery'
-import Avatar from './components/Avatar'
 
-export default function App() {
-  
+function Item({ name, isPacked }) {
+  if(isPacked){
+    return <li className="item">{name} ✅ </li>
 
-  return (
-    <div>
-      <Avatar person={{ name: 'Lin Lanying', imageId: 'YfeOqp2' }} size={100} />
-      <Avatar person={{ name: 'Aklilu Lemma', imageId: 'OKS67lh' }} size={80} />
-      <Avatar person={{ name: 'Katsuko Saruhashi', imageId: '1bX5QH6' }} size={50} />
-
-    </div>
-   
-     
-      
-
-    
-  )
+  }
+  return <li className="item">{name} ❌</li>
 }
 
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true}
+          name="Space Suit" 
+        />
+        <Item isPacked={true}
+        name="Helmet with a golden leaf"
+        />
+        <Item isPacked={false}
+        name="Photo of Tam"
+        />
 
+      </ul>
+    </section>
+  )
+}
