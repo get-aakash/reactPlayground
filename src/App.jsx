@@ -1,30 +1,12 @@
-function Item({name, importance}){
-  return(
-    <li className="item">
-      {name} {importance>0&&"(Importance: "+importance+")"}
-    </li>
-    
-  )
-}
+import Profile from "./components/Profile";
 
-export default function PackingList(){
-  return(
-    <section>
-      <h1>Sally Ride's Packing List</h1>
-      <ul>
-        <Item
-        importance={9}
-        name="Space suit"
-        />
-        <Item
-        importance={0}
-        name="Helmet with golden heart"
-        />
-        <Item
-        importance={6}
-        name="Photo of Tam"
-        />
-      </ul>
-    </section>
+
+export default function Gallery(){
+  return (
+    <div>
+      <Profile name="Maria Skłodowska-Curie" imageId="szV5sdG"  profession="physicist and chemist" awards={["Nobel Prize in Physics", "Nobel Prize in Chemistry", "Davy Medal", "Matteucci Medal"]} discovery="polonium (chemical element)" />
+      <Profile name="Katsuko Saruhashi" imageId="YfeOqp2"  profession="geochemist" awards={["Miyake Prize for geochemistry", "Tanaka Prize"]} discovery="a method for measuring carbon dioxide in seawater" />
+
+    </div>
   )
 }
