@@ -1,24 +1,23 @@
-import { getImageUrl } from "./components/utils"
+import Card from "./components/Card";
 
-function Avatar({person, size}){
-  return(
-    <img className="avatar" 
-    src={size<90?getImageUrl(person,"s"):getImageUrl(person,'b')} 
-    alt={person.name}
-    width={size}
-    height={size} 
-    />
-  )
-}
-
-export default function Profile(){
+export default function Profile() {
   return (
-    <Avatar
-    size={120}
-    person={{
-      name: "Aakash", 
-        imageId: '7vQD0fP'
-    }}
-    />
+    <div>
+      <Card>
+        <h1>Photo</h1>
+        <img className="avatar"
+          src="https://i.imgur.com/OKS67lhm.jpg"
+          alt="Aklilu Lemma"
+          width={100}
+          height={100} />
+
+      </Card>
+      <Card>
+        <h1>About</h1>
+        <p>Aklilu Lemma was a distinguished Ethiopian scientist who discovered a natural treatment to schistosomiasis.</p>
+      </Card>
+
+
+    </div>
   )
 }
