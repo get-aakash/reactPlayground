@@ -1,27 +1,12 @@
 
-export function Item({importance,name}){
-  return (
-    <li className="item">
-      {name}{importance > 0 && ' '}{importance>0 && <i> (Importance: {importance})</i>}
-    </li>
-  )
-}
-
-export default function PackingList(){
-  return(
-    <section>
-      <h1>Sally Ride's Packing List</h1>
-      <ul>
-        <Item importance={9}
-        name="Space Suit"
-        />
-        <Item importance={0}
-        name="Helmet with a golden leaf"
-        />
-        <Item importance={6}
-        name="Photo of Tam"
-        />
-      </ul>
-    </section>
-  )
+export default function Profile() {
+  const people = [
+    'Creola Katherine Johnson: mathematician',
+    'Mario José Molina-Pasquel Henríquez: chemist',
+    'Mohammad Abdus Salam: physicist',
+    'Percy Lavon Julian: chemist',
+    'Subrahmanyan Chandrasekhar: astrophysicist'
+  ]
+  const listItems = people.map(person=><li>{ person}</li>)
+  return <ul>{listItems}</ul>
 }
