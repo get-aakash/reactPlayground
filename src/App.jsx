@@ -1,5 +1,7 @@
+import { Fragment } from "react";
+
 const poem = {
-  lines:[
+  lines: [
     'I write, erase, rewrite',
     'Erase again, and then',
     'A poppy blooms.'
@@ -7,26 +9,15 @@ const poem = {
 }
 
 export default function Poem() {
-  let content = []
-  
-  poem.lines.forEach((line,i)=>{
-    content.push(
-      <hr  />
-    )
-    content.push(
-      <p >
-        {line}
-      </p>
-    )
-  })
-  content.shift()
-  
+
   return (
     <article>
-      
-      {content}
-    
-      
+      {poem.lines.map((line,i)=>(
+        <Fragment key={i}>
+          {i>0 && <hr />}
+          <p>{line}</p>
+        </Fragment>
+      ))}
     </article>
   );
 }
