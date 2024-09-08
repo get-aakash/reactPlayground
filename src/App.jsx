@@ -7,18 +7,26 @@ const poem = {
 }
 
 export default function Poem() {
+  let content = []
+  
+  poem.lines.forEach((line,i)=>{
+    content.push(
+      <hr  />
+    )
+    content.push(
+      <p >
+        {line}
+      </p>
+    )
+  })
+  content.shift()
+  
   return (
     <article>
-      {poem.lines.map((line, index) =>
-      <div>
-        <p key={index}>
-          {line}
-          
-        </p>
-        <hr />
-      </div>
-        
-      )}
+      
+      {content}
+    
+      
     </article>
   );
 }
