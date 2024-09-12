@@ -1,33 +1,22 @@
-import { useState } from "react"
-import { sculptureList } from "./components/data"
+import React from 'react'
+import { useState } from 'react'
+import {sculptureList} from "./components/data";
 
-
-export default function Gallery(){
+const App = () => {
   const [index,setIndex] = useState(0)
-  const [showMore, setShowMore] = useState(false)
-  const hasNext = index<sculptureList.length-1
+  let sculpture = sculptureList
 
-  function handleNextClick() {
-    if (hasNext) {
-      setIndex(index + 1);
-    } else {
-      setIndex(0);
-    }
+  function onButtonClick(){
+    setIndex(index+1)
+
   }
-  function handleMoreClick(){
-    setShowMore(!showMore)
-  }
-  let sculpture = sculptureList[index]
-  return(
-    <>
-    <button onClick={handleNextClick}>Next</button>
-    <h2>
-      <i>{sculpture.name}</i> by {sculpture.artist}
-    </h2>
-    <h3>({index+1} of {sculptureList.length})</h3>
-    <button onClick={handleMoreClick}>
-      {showMore ? 'Hide': 'show'} details
-    </button>
-    </>
+  return (
+    <div>
+      <button onClick={onButtonClick}>Next</button>
+      <h2>{sculpture[index].name} by <i>{sculpture[index].artist}</i></h2>
+      <p>{index} of {sculpture.length}</p>
+    </div>
   )
 }
+
+export default App
