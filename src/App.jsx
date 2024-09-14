@@ -1,23 +1,39 @@
-import { useState } from "react"
+import React from 'react'
+import { useState } from 'react'
 
-export default function MarketPlace() {
-  const [pending, setPending] = useState(0)
-  const [completed, setCompleted] = useState(0)
+const App = () => {
 
-  function handleOnClick(){
-    setPending(pending+1)
-    setTimeout(()=>{
-      setPending(n=>n-1) 
-      setCompleted(n=>n+1)
-    },3000)
+  const [person, setPerson] = useState({
+    firstName: "Barbara",
+    lastName: "Dongra",
+    email: "barbaradongra.com"
+  })
+
+  function handleFirstNameChange(e){
+    setPerson({...person,firstName:e.target.value})
+  }
+  function handleLastNameChange(e){
+    setPerson({...person, lastName: e.target.value})
+  }
+  function handleEmailChange(e){
+    setPerson({...person, email: e.target.value})
   }
   return (
-    <>
-      <h2>Pending:{pending}</h2>
-      <h2>Completed:{completed}</h2>
+    <div>
 
-      <button onClick={handleOnClick}>Buy</button>
-    </>
-
+      <label>First Name</label>
+      <input type="text" value={person.firstName} onChange={handleFirstNameChange} />
+      
+      <label>Last Name</label>
+      <input type="text" value={person.lastName} onChange={handleLastNameChange}/>
+      
+      <label>Email:</label>
+      <input type="email" value={person.email} onChange={handleEmailChange} />
+      <p>{person.firstName}</p>
+      <p>{person.lastName}</p>
+      <p>{person.email}</p>
+    </div>
   )
 }
+
+export default App
