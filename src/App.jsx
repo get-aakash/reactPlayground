@@ -1,22 +1,23 @@
-import { useState } from "react";
+import { useState } from "react"
 
-export default function TrafficLight(){
-  const [walk, setWalk] = useState(true)
+export default function MarketPlace() {
+  const [pending, setPending] = useState(0)
+  const [completed, setCompleted] = useState(0)
 
-  function handleClick(){
-    
-  alert(walk? "Stop is next":"walk is next")
-  setWalk(!walk)
+  function handleOnClick(){
+    setPending(pending+1)
+    setTimeout(()=>{
+      setPending(n=>n-1) 
+      setCompleted(n=>n+1)
+    },3000)
   }
-  
-
-  return(
+  return (
     <>
-      <button onClick={handleClick}>
-        Change to {walk? 'stop':"walk"}
-      </button>
-      <h1 style={{color: walk? 'darkgreen':"darkred"}}>{walk? 'walk':'stop'}</h1>
-    </>
-  )
+      <h2>Pending:{pending}</h2>
+      <h2>Completed:{completed}</h2>
 
+      <button onClick={handleOnClick}>Buy</button>
+    </>
+
+  )
 }
