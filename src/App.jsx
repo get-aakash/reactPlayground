@@ -2,52 +2,36 @@ import React from 'react'
 import { useState } from 'react'
 
 const App = () => {
-
   const [person, setPerson] = useState({
-    firstName: "Barbara",
-    lastName: "Dongra",
-    email: "barbaradongra.com",
-    profile:{
-      title: "Mrs",
-      age: "32",
-      gender: "female"
-    }
+    name: "Aakash Acharya",
+    city: "Kathmandu",
+    score:10
   })
 
+  function handlePlusClick(){
+    setPerson({...person, score: person.score+1
+    })
+
+  }
+
   function handleOnChange(e){
-    console.log(e.target)
-    const{name,value} = e.target
-    setPerson({...person, profile:{
-      ...person.profile,[name]:value
-    }})
+    const {name,value} = e.target
+    console.log(name,value)
+    setPerson({...person,[name]: value})
+
   }
   return (
     <div>
+      <label>Score: <b>{person.score}</b>{" "}<button onClick={handlePlusClick}>+1</button></label>
+      <label>Name: </label>
+      <input type="text" name='name' value={person.name} onChange={handleOnChange} />
 
-      <label>First Name</label>
-      <input type="text" name='firstName' value={person.firstName} onChange={handleOnChange} />
-      
-      <label>Last Name</label>
-      <input type="text" name='lastName' value={person.lastName} onChange={handleOnChange}/>
-      
-      <label>Email:</label>
-      <input type="email" name='email' value={person.email} onChange={handleOnChange} />
 
-      
-      <label>Title:</label>
-      <input type="email" name='title' value={person.profile.title} onChange={handleOnChange} />
-      
-      <label>Age:</label>
-      <input type="text" name='age' value={person.profile.age} onChange={handleOnChange} />
-      
-      <label>Gender:</label>
-      <input type="text" name='gender' value={person.profile.gender} onChange={handleOnChange} />
-      <p>{person.firstName}</p>
-      <p>{person.lastName}</p>
-      <p>{person.email}</p>
-      <p>{person.profile.title}</p>
-      <p>{person.profile.age}</p>
-      <p>{person.profile.gender}</p>
+      <label>City: </label>
+      <input type="text" name='city' value={person.city} onChange={handleOnChange} />
+      <p>{person.name}</p>
+      <p>{person.city}</p>
+      <p>{person.score}</p>
     </div>
   )
 }
