@@ -1,33 +1,22 @@
-import React from 'react'
-import { useState } from 'react'
-import {sculptureList} from "./components/data";
+import { useState } from "react";
 
-const App = () => {
-  const [index,setIndex] = useState(0)
-  const [display,setDisplay] = useState(true) 
-  let sculpture = sculptureList[index]
+export default function TrafficLight(){
+  const [walk, setWalk] = useState(true)
 
-  function onButtonClick(){
-    setIndex(index+1)
-    console.log(sculpture.length)
-    if(index===sculptureList.length-1){
-      setIndex(0)
-    }
-
+  function handleClick(){
+    
+  alert(walk? "Stop is next":"walk is next")
+  setWalk(!walk)
   }
+  
 
-  function toggleShowMore(){
-    setDisplay(!display)
-  }
-  return (
-    <div>
-      <button onClick={onButtonClick}>Next</button>
-      <h2>{sculpture.name} by <i>{sculpture.artist}</i></h2>
-      <p>{index+1} of {sculptureList.length}</p>
-      <button onClick={toggleShowMore}>{display?"ShowDetails":"HideDetails"}</button>
-      {!display&&<p>{sculpture.description}</p>}
-    </div>
+  return(
+    <>
+      <button onClick={handleClick}>
+        Change to {walk? 'stop':"walk"}
+      </button>
+      <h1 style={{color: walk? 'darkgreen':"darkred"}}>{walk? 'walk':'stop'}</h1>
+    </>
   )
-}
 
-export default App
+}
