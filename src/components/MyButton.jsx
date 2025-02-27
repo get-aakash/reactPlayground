@@ -26,6 +26,7 @@ const MyButton = () => {
     const listedItems = myVariable.map((item)=>
         <li key={item.id} onClick={()=>onClickHandle(item.name)}>{item.name}</li>
     )
+    console.log(typeof(listedItems))
     return (
         <div>
             <button>This is a Button</button>
