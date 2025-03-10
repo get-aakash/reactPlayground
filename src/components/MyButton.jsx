@@ -1,40 +1,47 @@
 import React from 'react'
 
 const MyButton = () => {
-    const user = {
-        name: "Aakash Acharya",
-        imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
-        imageSize: 90
-    }
+    const people = [{
+        id: 0,
+        name: 'Creola Katherine Johnson',
+        profession: 'mathematician',
+      }, {
+        id: 1,
+        name: 'Mario José Molina-Pasquel Henríquez',
+        profession: 'chemist',
+      }, {
+        id: 2,
+        name: 'Mohammad Abdus Salam',
+        profession: 'physicist',
+      }, {
+        id: 3,
+        name: 'Percy Lavon Julian',
+        profession: 'chemist',  
+      }, {
+        id: 4,
+        name: 'Subrahmanyan Chandrasekhar',
+        profession: 'astrophysicist',
+      }];
+    
+      let chemists = people.filter(item=>{
+        return item.profession === 'chemist'
 
-    const myVariable = [
-        {
-            name: "Banana",
-            id : 1
-        },
-        {
-            name: "Apple",
-            id : 2
-        },
+      }
+         
+      )
 
-    ]
-    const onClickHandle = (fruitName)=>{
-        alert(`You clicked on: ${fruitName}`)
+      console.log(chemists)
+     
+   
+    
 
-    }
-
-    const listedItems = myVariable.map((item)=>
-        <li key={item.id} onClick={()=>onClickHandle(item.name)}>{item.name}</li>
-    )
-    console.log(typeof(listedItems))
     return (
-        <div>
-            <button>This is a Button</button>
-            <h1>{user.name}</h1>
-            <img className='avatar' src={user.imageUrl} style={{ height: user.imageSize, width: user.imageSize }} alt="" />
+        <>
+        <h2>Foreach in react</h2>
+        <button>MyButton</button>
+       
+        </>
 
-            <ul>{listedItems}</ul>
-        </div>
     )
 }
 
