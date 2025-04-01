@@ -1,0 +1,51 @@
+import React from 'react'
+import {  movies, students } from '../utils/data'
+import PropsPassing, { MyMovie } from './PropsPassing'
+
+
+
+
+const Practice = () => {
+
+    const filteredData = students.filter(item => item.passed === true)
+
+
+    return (
+        <div>
+            {filteredData.map((item, i) => (
+                <h3 key={i}>Student: {item.name}, Score: {item.score}</h3>
+            ))}
+            <PropsPassing data={filteredData} />
+
+
+        </div>
+    )
+}
+
+export default Practice
+
+
+export const Movies = () => {
+
+    const filteredData = movies.filter(item => item.rating >= 7)
+    console.log(filteredData)
+    return (
+        <>
+            <h3>Movies</h3>
+            {
+                movies.map((item) => (
+                    <h3 key={item.id}>Title: {item.title}, Genre: {item.genre}, Rating: {item.rating}</h3>
+                ))
+            }
+            <MyMovie movies={filteredData} />
+        </>
+
+
+
+    )
+}
+
+export const filterAvailableBooks = (data) => {
+    return data.filter(book => book.available === true)
+}
+

@@ -1,13 +1,19 @@
 
 import './App.css'
-import MyButton from './components/MyButton'
+import Practice, { filterAvailableBooks, Movies } from './components/Practice'
+import { data } from './utils/data'
 
 function App() {
 
+
+
+  const availableBooks = filterAvailableBooks(data)
+  console.log(availableBooks)
+
   return (
     <>
-      <h1>Chai aur react</h1>
-      <MyButton />
+      <Practice />
+      <Movies />
     </>
 
   )
