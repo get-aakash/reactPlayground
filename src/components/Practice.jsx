@@ -49,3 +49,9 @@ export const filterAvailableBooks = (data) => {
     return data.filter(book => book.available === true)
 }
 
+export const filterByGenre = (data,genre)=>{
+    return(
+        data.filter(book=>book.genre === genre)
+    )
+
+}
