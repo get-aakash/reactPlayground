@@ -2,6 +2,7 @@
 import './App.css'
 import Practice, { filterAvailableBooks, filterByGenre, Movies } from './components/Practice'
 import Practicestate from './components/Practicestate'
+import ToDo from './components/ToDo'
 import { data } from './utils/data'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Practice />
       <Movies />
       <Practicestate />
+      <ToDo />
     </>
 
   )
