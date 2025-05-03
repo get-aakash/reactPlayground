@@ -1,5 +1,7 @@
 
 import './App.css'
+import { Counter, ToggleText } from './components/child'
+import Parent from './components/Parent'
 import Practice, { filterAvailableBooks, filterByGenre, Movies } from './components/Practice'
 import Practicestate from './components/Practicestate'
 import ToDo from './components/ToDo'
@@ -21,6 +23,12 @@ function App() {
       <Movies />
       <Practicestate />
       <ToDo />
+      <Parent />
+
+      <Counter />
+
+      <ToggleText />
+      
     </>
 
   )

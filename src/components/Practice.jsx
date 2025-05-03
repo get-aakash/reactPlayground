@@ -7,6 +7,8 @@ import PropsPassing, { MyMovie } from './PropsPassing'
 
 const Practice = () => {
 
+   
+
     const filteredData = students.filter(item => item.passed === true)
 
 
@@ -27,8 +29,18 @@ export default Practice
 
 export const Movies = () => {
 
+    const num = [1,2,3,4]
+    let sum = 0
+
     const filteredData = movies.filter(item => item.rating >= 7)
     console.log(filteredData)
+
+    num.forEach(element => 
+         sum = sum +element
+    );
+    
+    console.log(sum)
+    
     return (
         <>
             <h3>Movies</h3>

@@ -1,48 +1,45 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
 
 const ToDo = () => {
-    const [task, setTask] = useState("")
-    const [data, setData] = useState([])
+    const [data, setData] = useState("")
+    const [todo, setTodo] = useState([])
 
     const handleOnChange = (e)=>{
-        setTask(e.target.value)
+      setData(e.target.value)
+
+    }
+    const handleOnSubmit = (e)=>{
+      e.preventDefault()
+      const newTask = {
+        id: Date.now(),
+        text: data
+      }
+      setTodo([...todo, newTask])
     }
 
-    const handleAddOnCLick = ()=>{
-        setData([...data, task])
-    }
-
+    console.log(todo)
     
-    console.log(data)
-    return (
-        <div>
-            <div>
-                <p>Enter your input here</p>
+  return (
+    <div>
 
-                <input type="text" onChange={handleOnChange} />
-
-            </div>
-            <div>
-                <button onClick={handleAddOnCLick}>Add+</button>
-
-            </div>
-
-            <ul>
-                {
-                    data?.map((item,i)=>{
-                        return (
-                            <li key={i}>{item} <button>Delete</button></li>
-
-                        )
-                    })
-                }
-               
-            </ul>
-
-
-
+        <div className="todo-container ">
+            <input type="text" onChange={handleOnChange} />
+            <button type='submit' onClick={handleOnSubmit}>Add+ </button>
         </div>
-    )
+        <div className="todo-list">
+          <ul>
+          {
+            todo.map((item)=>{
+              return <li key={item.id }>{item.text}</li>
+
+            })
+          }
+          </ul>
+        </div>
+      
+    </div>
+  )
 }
 
 export default ToDo
