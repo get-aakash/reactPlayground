@@ -2,9 +2,11 @@
 import './App.css'
 import { Counter, ToggleText } from './components/child'
 import Displayuser from './components/displayuser'
+import MyRedux from './components/MyRedux'
 import Parent from './components/Parent'
 import Practice, { filterAvailableBooks, filterByGenre, Movies } from './components/Practice'
 import Practicestate from './components/Practicestate'
+import ThemeChange from './components/ThemeChange'
 import ToDo from './components/ToDo'
 import { data } from './utils/data'
 
@@ -30,6 +32,9 @@ function App() {
 
       <ToggleText />
       <Displayuser />
+
+      <MyRedux />
+      <ThemeChange />
       
     </>
 
