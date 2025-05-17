@@ -1,42 +1,25 @@
-
+import { Route, Router, Routes } from 'react-router-dom'
 import './App.css'
-import { Counter, ToggleText } from './components/child'
-import Displayuser from './components/displayuser'
-import MyRedux from './components/MyRedux'
-import Parent from './components/Parent'
-import Practice, { filterAvailableBooks, filterByGenre, Movies } from './components/Practice'
-import Practicestate from './components/Practicestate'
-import ThemeChange from './components/ThemeChange'
-import ToDo from './components/ToDo'
-import { data } from './utils/data'
+import Home from './pages/Home'
+import About from './pages/About'
+import Dashboard from './pages/Dashboard'
+import BlogList from './pages/BlogList'
+import BlogPost from './pages/BlogPost'
+import NotFound from './pages/NotFound'
 
 function App() {
 
 
 
-  const availableBooks = filterAvailableBooks(data)
-  console.log(availableBooks)
-
-  const genreFilter = filterByGenre(data,"Fiction")
-  console.log("Genre", genreFilter)
-
   return (
-    <>
-      <Practice />
-      <Movies />
-      <Practicestate />
-      <ToDo />
-      <Parent />
-
-      <Counter />
-
-      <ToggleText />
-      <Displayuser />
-
-      <MyRedux />
-      <ThemeChange />
-      
-    </>
+    <Routes>
+      <Route path='/' element={<Home />}/>
+      <Route path='/about' element={<About />}/>
+      <Route path='/dashboard' element={<Dashboard />}/>
+      <Route path='/bloglist' element={<BlogList />}/>
+      <Route path='/blogs/:id' element={<BlogPost />}/>
+      <Route path='*' element={<NotFound/>} />
+    </Routes>
 
   )
 }
