@@ -1,0 +1,63 @@
+
+
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400, 600, 700;
+    font-style: normal;
+    height: 100%;
+}
+header{
+    height: 90px;
+    background-color: rgb(100, 100, 160);
+    padding: 30px 25px;
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+}
+
+nav > span{
+    color: #61DAFB;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+img {
+    width: 40px;
+}
+
+main {
+    padding: 30px 25px;
+    background: rgb(105, 103, 103);
+    color: aliceblue;
+    background-image: url('/src/download.png');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 45%;
+}
+main > h1{
+    margin: 0;
+    font-size: 2.4rem;
+}
+ul{
+    margin-top: 46px;
+    max-width: 400px;
+}
+
+.list-style{
+    padding-block: 10px;
+    
+}
+
+li::marker{
+    color: #61DAFB;
+    font-size: 1.5rem;
+}
