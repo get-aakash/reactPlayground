@@ -11,6 +11,23 @@ body {
     font-style: normal;
     height: 100%;
 }
+.header-style{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(223, 160, 160);
+    border-radius: 5px;
+    margin: 3px;
+}
+.header-style > img{
+    height: 50px;
+    width: 80px;
+
+}
+.header-style > h1{
+    color: #fff;
+    font-weight: 500;
+}
 header{
     height: 90px;
     background-color: rgb(100, 100, 160);
