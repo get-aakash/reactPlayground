@@ -10,11 +10,22 @@ function App() {
 
   return (
     <>
-    <Header />
-    <Entry />
-    <Contact />
-    <Contact />
-    <Contact />
+      <Header />
+      <Entry />
+      <div className="contacts">
+        <Contact 
+        img="src/assets/mr-whiskerson.png"
+        name="Mr. Whiskerson"
+        phone="(212) 555-1234"
+        email="mr.whiskaz@catnap.meow"
+
+        />
+        <Contact />
+        <Contact />
+        <Contact />
+
+      </div>
+
 
     </>
   )
