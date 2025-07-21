@@ -20,9 +20,27 @@ function App() {
         email="mr.whiskaz@catnap.meow"
 
         />
-        <Contact />
-        <Contact />
-        <Contact />
+         <Contact 
+        img="src/assets/mr-whiskerson.png"
+        name="Mr. Whiskerson"
+        phone="(212) 555-1234"
+        email="mr.whiskaz@catnap.meow"
+
+        />
+         <Contact 
+        img="src/assets/mr-whiskerson.png"
+        name="Mr. Whiskerson"
+        phone="(212) 555-1234"
+        email="mr.whiskaz@catnap.meow"
+
+        />
+        <Contact 
+        img="src/assets/mr-whiskerson.png"
+        name="Mr. Whiskerson"
+        phone="(212) 555-1234"
+        email="mr.whiskaz@catnap.meow"
+
+        />
 
       </div>
 

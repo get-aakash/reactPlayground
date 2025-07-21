@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Contact = ({img, name,phone,email}) => {
+const Contact = (props) => {
   return (
     <div className='cat-contacts'>
         <article className="contact-card">
                 <img 
-                    src={img}
+                    src={props.img}
                     alt="Photo of Mr. Whiskerson"
                 />
                 <h3>{name}</h3>
@@ -14,14 +14,14 @@ const Contact = ({img, name,phone,email}) => {
                         src="src/assets/phone-icon.png" 
                         alt="phone icon" 
                     />
-                    <p>{phone}</p>
+                    <p>{props.phone}</p>
                 </div>
                 <div className="info-group">
                     <img 
                         src="src/assets/mail-icon.png" 
                         alt="mail icon"
                     />
-                    <p>{email}</p>
+                    <p>{props.email}</p>
                 </div>
             </article>
 
