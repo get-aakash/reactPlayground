@@ -1,41 +1,37 @@
 import React from 'react'
 
-const Entry = () => {
+const Entry = (props) => {
+    const {country,title, googleMapsLink, dates, text,img } = props
+    const nums = [1,2,3,4,5]
+    const squaredNums = nums.map((item)=> item**2)
+    console.log(typeof(squaredNums))
+
+    const names = ['alice', 'bob', 'charlie', 'danielle']
+    const capNames = names.map((item)=> item[0].toUpperCase() +item.slice(1))
+    console.log(capNames)
+
+    const pokemon = ['Bulbasaur', "Charmander", "Squirtle"]
+    
     return (
         <div className='container'>
             <div className="travel-container">
-                <img src="https://cdn.britannica.com/47/80547-120-839DEBE4/Field-green-tea-Mount-Fuji-Shizuoka-prefecture.jpg" alt="mtfuji logo" />
+                <img src={img.src} alt={img.alt} />
                 <div className="travel-description">
                     <div className="img-container">
                         <img src="src/assets/marker.png" alt="" /> 
-                        <span>JAPAN</span>
-                        <a href="">View on Google maps</a>
+                        <span>{country}</span>
+                        <a href={googleMapsLink}>View on Google maps</a>
                         
 
                     </div>
-                    <h1>Mount Fuji</h1>
+                    <h1>{title}</h1>
 
-                    <p className='date'>12 Jan, 2021 - 24 Jan, 2021</p>
-                    <p>Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.</p>
+                    <p className='date'>{dates}</p>
+                    <p>{text}</p>
                 </div>
             </div>
 
-            <div className="travel-container">
-                <img src="https://cdn.britannica.com/47/80547-120-839DEBE4/Field-green-tea-Mount-Fuji-Shizuoka-prefecture.jpg" alt="mtfuji logo" />
-                <div className="travel-description">
-                    <div className="img-container">
-                        <img src="src/assets/marker.png" alt="" /> 
-                        <span>JAPAN</span>
-                        <a href="">View on Google maps</a>
-                        
-
-                    </div>
-                    <h1>Mount Fuji</h1>
-
-                    <p className='date'>12 Jan, 2021 - 24 Jan, 2021</p>
-                    <p>Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.</p>
-                </div>
-            </div>
+           
 
 
 
