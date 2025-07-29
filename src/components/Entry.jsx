@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Entry = (props) => {
-    const {country,title, googleMapsLink, dates, text,img } = props
+    const {country,title, googleMapsLink, dates, text,img } = props.data
     const nums = [1,2,3,4,5]
     const squaredNums = nums.map((item)=> item**2)
     console.log(typeof(squaredNums))
@@ -10,7 +10,7 @@ const Entry = (props) => {
     const capNames = names.map((item)=> item[0].toUpperCase() +item.slice(1))
     console.log(capNames)
 
-    const pokemon = ['Bulbasaur', "Charmander", "Squirtle"]
+    const pokemon = [<h2>Bulbasaur</h2>, <h2>Charmander</h2>, <h2>Squirtle</h2>]
     
     return (
         <div className='container'>
@@ -30,6 +30,8 @@ const Entry = (props) => {
                     <p>{text}</p>
                 </div>
             </div>
+
+           
 
            
 
