@@ -5,151 +5,26 @@
 }
 body {
     margin: 0;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400, 600, 700;
-    font-style: normal;
-    height: 100%;
 }
-.header-style{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(223, 160, 160);
-    border-radius: 5px;
-    margin: 3px;
-}
-.header-style > img{
-    height: 50px;
-    width: 80px;
-
-}
-.header-style > h1{
-    color: #fff;
-    font-weight: 500;
-}
-header{
-    height: 90px;
-    background-color: rgb(100, 100, 160);
-    padding: 30px 25px;
-}
-
-.navbar-header {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: 100%;
-}
-
-nav > span{
-    color: #61DAFB;
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-.travel-container{
-    margin: 20px;
-    padding: 40px;
-    display: flex;
-    gap: 2rem;
-}
-
-.travel-container > img{
-    height: 250px;
-    width: 170px;
-    border-radius: 5px;
-}
-.img-container{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.img-container > img{
-    height: 20px;
-    width: 13px;
-}
-
-.travel-description >h2{
-    font-size: large;
-    font-weight: bolder;
-}
-
-.date{
-    margin-top: 40px;
-    font-weight: bold;
-}
-.contacts {
+.pad-container{
+    margin: 90px auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
-}
-.contact-card {
-    flex-basis: 225px;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 13px;
-    padding-bottom: 20px;
-    background-color: white;
-}
-.contact-card > img {
-    width: 100%;
-    height: auto;
-    align-self: center;
-    border-radius: 5px;
-    object-fit: cover;
-}
-.contact-card > h3 {
-    font-weight: 700;
-    font-size: 18px;
-}
-.info-group {
-    display: flex;
-    align-items: center;
-}
-
-.info-group > img {
-    height: 11px;
-    margin-right: 8px;
-}
-
-.info-group > p {
-    margin-block: 3px;
-    font-size: 12px;
-    color: #2B283A;
-}
-
-img {
-    width: 40px;
-}
-
-
-main {
-    padding: 30px 25px;
-    background: rgb(105, 103, 103);
-    color: aliceblue;
-    background-image: url('/src/download.png');
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: 45%;
-}
-main > h1{
-    margin: 0;
-    font-size: 2.4rem;
-}
-ul{
-    margin-top: 46px;
+    gap: 10px;
     max-width: 400px;
 }
 
-.list-style{
-    padding-block: 10px;
+.pad-container >button{
+    flex: 1 ;
+    height: 90px;
+    width: 110px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.on{
     
 }
 
-li::marker{
-    color: #61DAFB;
-    font-size: 1.5rem;
-}
+
