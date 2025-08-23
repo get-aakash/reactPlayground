@@ -4,14 +4,18 @@ import data from '../data'
 const Pads = () => {
     const [soundData, setSoundData] = React.useState(data)
     
-    function toggleColor(on){
-        const value = !on.on
-        setSoundData[{...soundData, value}]
-        console.log(soundData)
+    function toggleColor(id){
+      setSoundData(soundData.map((item)=>{
+        return(
+          item.id === id? {...item, on:!item.on}: item
+        )
+      }))
+      
+      
     }
   return (
     <div className='pad-container'>
-        {soundData.map((item)=><button  key={item.id} onClick={()=>toggleColor(item)} style={{backgroundColor:item.on?item.color:""}}>{item.color}</button>)}
+        {soundData.map((item)=><button  key={item.id} onClick={()=>toggleColor(item.id)} style={{backgroundColor:item.on?item.color:""}}>{item.color}</button>)}
       
     </div>
   )
