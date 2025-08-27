@@ -10,10 +10,6 @@ function App() {
     <>
      <Pads />
 
-      
-      
-
-
     </>
   )
 
