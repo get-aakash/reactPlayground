@@ -1,5 +1,5 @@
 import './App.css'
-import Pads from './component/Pads'
+import Pad from './component/Pad'
 
 
 
@@ -8,8 +8,9 @@ function App() {
 
   return (
     <>
-     <Pads />
-
+  
+    <Pad />
+    
     </>
   )
 

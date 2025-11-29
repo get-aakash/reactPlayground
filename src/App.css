@@ -1,30 +1,24 @@
+.sound-pad{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;   
+    
 
+}
 
-*{
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-}
-.pad-container{
-    margin: 90px auto;
+.each-pad{
+    list-style: none;
+    height: 120px;
+    width: 180px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 400px;
-}
+    align-items: center;
 
-.pad-container >button{
-    flex: 1 ;
-    height: 90px;
-    width: 110px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button.on{
     
+
 }
-
-
