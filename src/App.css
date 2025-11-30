@@ -1,4 +1,13 @@
+.sound-container{
+  height: 90vh;        /* full screen height */
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;   
+
+}
+
 .sound-pad{
+    
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 2rem;
@@ -18,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: aliceblue;
 
     
 

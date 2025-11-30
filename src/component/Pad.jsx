@@ -5,21 +5,33 @@ const Pad = () => {
     const [value, setValue] = React.useState(data)
 
     const handleOnClick=(id)=>{
+
+        const clickedSound = value.find((item)=>item.id === id)
+        if(clickedSound){
+            const audio = new Audio(clickedSound.sound)
+            audio.play()
+        }
+
+
+
         const result = value.map((item)=>{
             return (
                 item.id===id?{...item, on: !item.on}: item
-            )
+              )  
             
         })
         setValue(result)
-        console.log(result)
+        
+           
+
+
         
        
         
     }
     
   return (
-    <div >
+    <div className='sound-container' >
         <ul className='sound-pad' >
             
                 {
