@@ -3,6 +3,19 @@ import data from "../data"
 
 const Pad = () => {
     const [value, setValue] = React.useState(data)
+    const [meme, setMeme] = React.useState({
+        id: 1,
+        fName: "aakash",
+        lName: "acharya"
+    })
+
+    
+
+    function handleOnChange(event){
+       const {value} = event.currentTarget
+       setMeme(prevData=>({...prevData, fName:value}))
+       console.log(meme)
+    }
 
     const handleOnClick=(id)=>{
 
@@ -22,7 +35,7 @@ const Pad = () => {
         })
         setValue(result)
         
-           
+        
 
 
         
@@ -32,6 +45,7 @@ const Pad = () => {
     
   return (
     <div className='sound-container' >
+        <input type="text" onChange={handleOnChange} />
         <ul className='sound-pad' >
             
                 {
