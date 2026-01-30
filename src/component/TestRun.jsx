@@ -143,7 +143,7 @@ export const UserSelect = ()=>{
 
 export const LoginForm = ()=>{
     const [userData, setUserData] = React.useState({})
-    const [error, setError] = React.useState(false)
+    const [error, setError] = React.useState({email: false, password: false})
 
     const handleOnChange = (e)=>{
        const {name, value}= e.target
@@ -157,9 +157,14 @@ export const LoginForm = ()=>{
 
     const handleOnSubmit = (e)=>{
         e.preventDefault()
-        if(userData.password.length<< 6 || !userData.email.includes("@")){
-            setError(prevData=> !prevData)
-        }
+       const emailErrors = !userData.email.includes("@")
+       const passwordError  = !userData.passwordlength<6
+
+       setError({email: emailErrors, password: passwordError})
+
+       if(!emailErrors && !passwordError){
+        console.log("Form submitted", userData)
+       }
         
         
         
@@ -170,10 +175,10 @@ export const LoginForm = ()=>{
             <form action="" onSubmit={handleOnSubmit}>
             <label>Email:</label>
             <input type="email" name='email' placeholder='Enter your email here' onChange={handleOnChange} />
-            {error&& <p>email is invalid</p>}
+           {error.email && <p>email invalid</p>}
             <label>Password:</label>
             <input type="password" name='password' placeholder='Enter your password here' onChange={handleOnChange} />
-            {error&& <p>password is invalid</p>}
+            {error.password && <p> password invalid</p>}
             
             <button type='submit' >Submit</button>
             </form>
