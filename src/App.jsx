@@ -1,34 +1,32 @@
-import './App.css'
-import Pad from './component/Pad'
-import Practice from './component/Practice'
-import RandomQuoteGenerator from './component/RandomQuoteGenerator'
-import TestRun, { ControlledInput, DisplayUser, IncrementCounter, LoginForm, UserSelect } from './component/TestRun'
-import WindowTracker from './component/WindowTracker'
+import React, { useEffect } from 'react'
+import { fetchUser } from './axios'
 
+const App = () => {
+    const [userData, setUserData] = React.useState({})
+    const [loading, setLoading] = React.useState(true)
+    const [error, setError] = React.useState(null)
+    useEffect(()=>{
+       const loadData = async()=>{
+        setLoading(true)
+        try {
+            const data = await fetchUser()
+            setUserData(data)
+        } catch (error) {
+            setError("Failed to load user")
+            
+        } finally{
+            setLoading(false)
+        }
 
+       }
 
-function App() {
-
-  
-
+    },[])
+    console.log(userData)
   return (
-    <>
-   
-  
-    <Pad />
-    <Practice />
-    <RandomQuoteGenerator />
-    <TestRun />
-    <IncrementCounter />
-    <ControlledInput />
-    <DisplayUser />
-    <UserSelect />
-    <LoginForm />
-    
-    </>
+    <div>
+      
+    </div>
   )
-
-
 }
 
 export default App
