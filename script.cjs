@@ -1,12 +1,22 @@
 const redux = require('redux')
 const createStore = redux.createStore
-
+const combineReducer = redux.combineReducers
+const reduxLogger = require('redux-logger')
+const logger = reduxLogger.createLogger()
+const applyMiddleware = redux.applyMiddleware
 const ORDER_PIZZA = "ORDER_PIZZA"
+const ORDER_BURGER = "ORDER_BURGER"
 // const action = {
 //     type: ORDER_PIZZA,
 //     shop_name: "Pizza Shop"
 // }
 
+
+function orderBurger() {
+    return {
+        type: ORDER_BURGER
+    }
+}
 function orderPizza() {
     return {
         type: ORDER_PIZZA,
@@ -15,17 +25,39 @@ function orderPizza() {
 }
 
 //Reducer
-const initialState = {
+const initialStateForPizza = {
     pizzaBase: 100,
+
     toppings: ['capsicum', 'cheese']
 }
 
-const reducer = (state = initialState, action) => {
+const initialStateForBurger = {
+    burgerBuns: 200,
+
+}
+
+const reducerPizza = (state = initialStateForPizza, action) => {
     switch (action.type) {
         case ORDER_PIZZA:
             return {
-                ...state,pizzaBase: state.pizzaBase - 1
+                ...state, pizzaBase: state.pizzaBase - 1
             }
+
+
+
+        default:
+            return state
+    }
+}
+
+const reducerBurger = (state = initialStateForBurger, action) => {
+    switch (action.type) {
+        case orderBurger:
+            return {
+                ...state, burgerBuns: state.burgerBuns - 1
+            }
+
+
 
         default:
             return state
@@ -33,10 +65,14 @@ const reducer = (state = initialState, action) => {
 }
 
 //store
-
-const store = createStore(reducer)
-console.log("Initial State",store.getState())
-store.subscribe(()=>console.log("updated State",store.getState()))
+const rootReducer = combineReducer({
+    pizza:reducerPizza,
+    burger:reducerBurger
+})
+const store = createStore(rootReducer, applyMiddleware(logger) )
+console.log("Initial State", store.getState())
+store.subscribe(() => {})
 
 store.dispatch(orderPizza())
+store.dispatch(orderBurger())
 
