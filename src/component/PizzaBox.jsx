@@ -7,7 +7,7 @@ const PizzaBox = (props) => {
   return (
     <div className='container'>
         <h2 className='text'>Number of Pizza Base available -{props.pizzaBase}</h2>
-        <button className='btn'>Pizza</button>
+        <button className='btn' onClick={props.orderPizza}>Pizza</button>
     </div>
   )
 }
@@ -21,7 +21,7 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-            orderPizza:()=>dispatch(orderPizza)
+            orderPizza:()=>dispatch(orderPizza())
     }
 }
 
