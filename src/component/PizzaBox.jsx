@@ -1,13 +1,14 @@
 import React from 'react'
 import { orderPizza } from './redux'
-import { connect } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 
-const PizzaBox = (props) => {
-    console.log(props)
+const PizzaBox = () => {
+    const pizzaRolls = useSelector(state=>state.pizza.pizzaBase)
+    const dispatch = useDispatch()
   return (
     <div className='container'>
-        <h2 className='text'>Number of Pizza Base available -{props.pizzaBase}</h2>
-        <button className='btn' onClick={props.orderPizza}>Pizza</button>
+        <h2 className='text'>Number of Pizza Base available -{pizzaRolls}</h2>
+        <button className='btn' onClick={()=>dispatch(orderPizza())}>Pizza</button>
     </div>
   )
 }
