@@ -5,15 +5,17 @@ import store from './component/redux/store'
 import HooksContainer from './component/HooksContainer'
 import BurgerBox from './component/BurgerBox'
 import CustomerChoice from './component/redux/CustomerChoice'
+import ProductsContainers from './component/redux/ProductsContainers'
 
 const App = () => {
 
   return (
     <Provider store={store}>
-     
-      {/* <PizzaBox />
-      <BurgerBox /> */}
-      <CustomerChoice />
+      
+  {/* <PizzaBox />
+  <BurgerBox />
+  <CustomerChoice />  */}
+      <ProductsContainers />
     </Provider>
 
 
